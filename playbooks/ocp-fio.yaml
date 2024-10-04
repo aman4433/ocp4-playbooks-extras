@@ -4,4 +4,4 @@
   tasks:
   - name: Deploy File Integrity Operator
     include_role:
-      name: ocp-fio
+      name: plugins_and_tools/ocp-fio

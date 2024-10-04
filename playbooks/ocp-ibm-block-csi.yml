@@ -2,4 +2,4 @@
 - name: ocp-ibm-block-csi
   hosts: bastion
   roles:
-  - ocp-ibm-block-csi
+  - openshift_operators/ocp-ibm-block-csi

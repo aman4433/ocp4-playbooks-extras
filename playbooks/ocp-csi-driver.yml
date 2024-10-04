@@ -2,4 +2,4 @@
 - name: PowerVC CSI driver installation and validation
   hosts: bastion
   roles:
-  - ocp-csi-driver
+  - openshift_operators/ocp-csi-driver

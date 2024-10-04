@@ -2,4 +2,4 @@
 - name: Installation and verification of Jenkins
   hosts: bastion
   roles:
-  - ocp-jenkins
+  - automation_cicd/ocp-jenkins

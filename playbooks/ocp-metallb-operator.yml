@@ -4,4 +4,4 @@
   tasks:
     - name: Deploy MetalLB Operator
       include_role:
-        name: ocp-metallb-operator
+        name: openshift_operators/ocp-metallb-operator

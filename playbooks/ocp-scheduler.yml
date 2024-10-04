@@ -3,4 +3,4 @@
 - name: OCP scheduler profile validation and e2e test run 
   hosts: bastion
   roles:
-    - ocp-scheduler
+    - openshift_cluster_monitoring/ocp-scheduler

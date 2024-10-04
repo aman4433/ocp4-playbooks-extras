@@ -4,10 +4,10 @@
   tasks:
   - name: Include the global-secret-update role
     include_role:
-        name: global-secret-update
+        name: security_compliance/global-secret-update
     when: nfd_catalogsource != "" and nfd_catalogsource != None
 
 - name: Include the Node Feature Discovery Operator role
   hosts: bastion
   roles:
-  - ocp-nfd-operator
+  - openshift_operators/ocp-nfd-operator

@@ -2,5 +2,5 @@
 - name: Installatioin of GO Lang
   hosts: bastion
   roles:
-    - role: golang-installation
+    - role: plugins_and_tools/golang-installation
 

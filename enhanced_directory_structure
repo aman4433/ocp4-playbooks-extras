@@ -1,0 +1,408 @@
+playbooks
+├── cro.yml
+├── global-secret-update.yml
+├── golang-installation.yml
+├── hypershift.yml
+├── ipa-identity-provider.yml
+├── main.yml
+├── monitoring-user-defined-projects.yml
+├── ocp-alerts.yml
+├── ocp-cli-plugins.yml
+├── ocp-cluster-logging.yml
+├── ocp-compliance.yml
+├── ocp-coo.yml
+├── ocp-cs.yml
+├── ocp-csi-driver.yml
+├── ocp-descheduler.yml
+├── ocp-e2e.yml
+├── ocp-etcd-encryption-decryption.yml
+├── ocp-fio.yaml
+├── ocp-hostpath.yml
+├── ocp-hpa.yml
+├── ocp-htpasswd-identity-provider.yml
+├── ocp-ibm-block-csi.yml
+├── ocp-iscsi.yml
+├── ocp-jenkins.yml
+├── ocp-metallb-operator.yml
+├── ocp-migration.yml
+├── ocp-network-observability.yml
+├── ocp-nfd-operator.yml
+├── ocp-nmstate-operator.yml
+├── ocp-ovnkube-cni.yml
+├── ocp-pod-disruption-budget.yml
+├── ocp-registry.yml
+├── ocp-scale.yml
+├── ocp-scheduler.yml
+├── ocp-sctp.yml
+├── ocp-service-binding-operator.yml
+├── ocp-verification-tests.yml
+├── ocp-vpa-operator.yml
+├── request-header-identity-provider.yml
+└── roles
+    ├── automation_cicd
+    │   ├── ocp-e2e
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── files
+    │   │   │   ├── invert_excluded.py
+    │   │   │   └── kube-test-repo-list
+    │   │   ├── tasks
+    │   │   │   └── main.yml
+    │   │   └── vars
+    │   │       └── main.yml
+    │   ├── ocp-jenkins
+    │   │   ├── README.md
+    │   │   └── tasks
+    │   │       └── main.yml
+    │   ├── ocp-migration
+    │   │   ├── README.md
+    │   │   └── tasks
+    │   │       ├── main.yml
+    │   │       ├── ovnkube_to_sdn.yml
+    │   │       └── sdn_to_ovnkube.yml
+    │   └── ocp-scale
+    │       ├── README.md
+    │       ├── defaults
+    │       │   └── main.yml
+    │       ├── tasks
+    │       │   └── main.yml
+    │       └── vars
+    │           └── main.yml
+    ├── custom_deployments
+    │   ├── hypershift
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   └── tasks
+    │   │       ├── hypershift-destroy.yml
+    │   │       ├── hypershift-install.yml
+    │   │       └── main.yml
+    │   ├── ocp-image-registry
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yaml
+    │   │   └── tasks
+    │   │       └── main.yaml
+    │   └── ocp-iscsi-deploy
+    │       ├── README.md
+    │       ├── defaults
+    │       │   └── main.yaml
+    │       ├── tasks
+    │       │   ├── config.yaml
+    │       │   └── main.yaml
+    │       └── templates
+    │           ├── chap-secret.yaml
+    │           ├── iscsi-pod.yaml
+    │           ├── iscsi-pv.yaml
+    │           └── iscsi-pvc.yaml
+    ├── openshift_cluster_monitoring
+    │   ├── check-cluster-health
+    │   │   ├── README.md
+    │   │   └── tasks
+    │   │       └── main.yml
+    │   ├── monitoring-user-defined-projects
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   └── tasks
+    │   │       └── main.yml
+    │   ├── ocp-alerts
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── files
+    │   │   │   └── alert_rule.yaml
+    │   │   └── tasks
+    │   │       └── main.yml
+    │   ├── ocp-cluster-logging
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── files
+    │   │   │   ├── ImageContentSourcePolicy.yml
+    │   │   │   ├── clf-cleanup.yml
+    │   │   │   ├── clusterlogforwarder.yml
+    │   │   │   ├── clusterlogging.yml
+    │   │   │   ├── get-cloudwatch-logs.py
+    │   │   │   ├── get-cloudwatch-logs.yml
+    │   │   │   ├── logtest-structured-data.yml
+    │   │   │   └── validate-urls.yml
+    │   │   ├── tasks
+    │   │   │   ├── kibana-ldap.yml
+    │   │   │   └── main.yml
+    │   │   └── templates
+    │   │       ├── CatalogSource.yaml.j2
+    │   │       └── clf-instance.yml.j2
+    │   ├── ocp-network-observability
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── files
+    │   │   │   ├── ocp-qe-perfscale-ci-changes.patch
+    │   │   │   └── openshift-tests-private-changes.patch
+    │   │   ├── tasks
+    │   │   │   ├── cleanup.yaml
+    │   │   │   ├── deployment.yml
+    │   │   │   ├── e2e.yml
+    │   │   │   └── main.yml
+    │   │   ├── templates
+    │   │   │   ├── loki_deployment_log.txt.j2
+    │   │   │   └── noo_deployment_log.txt.j2
+    │   │   └── vars
+    │   │       └── main.yml
+    │   ├── ocp-scheduler
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── tasks
+    │   │   │   ├── main.yml
+    │   │   │   └── verify_scheduler_profile.yaml
+    │   │   └── vars
+    │   │       └── main.yaml
+    │   └── ocp-verification-tests
+    │       ├── README.md
+    │       ├── defaults
+    │       │   └── main.yml
+    │       ├── tasks
+    │       │   └── main.yml
+    │       └── vars
+    │           └── main.yml
+    ├── openshift_operators
+    │   ├── cluster-resource-override-operator
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── tasks
+    │   │   │   ├── cro_operator_cleanup.yml
+    │   │   │   └── main.yml
+    │   │   ├── templates
+    │   │   │   └── cro_test.yaml.j2
+    │   │   └── vars
+    │   │       └── main.yml
+    │   ├── ipa-identity-provider
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yaml
+    │   │   └── tasks
+    │   │       └── main.yml
+    │   ├── ocp-coo
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yaml
+    │   │   ├── tasks
+    │   │   │   ├── cleanup.yaml
+    │   │   │   ├── install.yaml
+    │   │   │   └── main.yaml
+    │   │   └── vars
+    │   │       └── main.yaml
+    │   ├── ocp-cs
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── tasks
+    │   │   │   └── main.yml
+    │   │   └── templates
+    │   │       ├── catalog-source.yaml.j2
+    │   │       ├── cs-group.yaml.j2
+    │   │       ├── cs-request.yaml.j2
+    │   │       └── cs-sub.yaml.j2
+    │   ├── ocp-csi-driver
+    │   │   ├── README.md
+    │   │   └── tasks
+    │   │       └── main.yml
+    │   ├── ocp-descheduler
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yaml
+    │   │   ├── tasks
+    │   │   │   └── main.yaml
+    │   │   └── vars
+    │   │       └── main.yml
+    │   ├── ocp-etcd-encryption-decryption
+    │   │   ├── README.md
+    │   │   └── tasks
+    │   │       └── main.yml
+    │   ├── ocp-htpasswd-identity-provider
+    │   │   ├── README.md
+    │   │   └── tasks
+    │   │       └── main.yml
+    │   ├── ocp-ibm-block-csi
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── files
+    │   │   │   ├── 99-ibm-attach.yaml
+    │   │   │   └── demo-storageclass.yaml
+    │   │   ├── tasks
+    │   │   │   └── main.yml
+    │   │   └── templates
+    │   │       ├── demo-pvc-file-system.yaml
+    │   │       ├── demo-pvc-raw-block.yaml
+    │   │       ├── demo-secret.yaml
+    │   │       └── demo-statefulset-file-system.yaml
+    │   ├── ocp-metallb-operator
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── tasks
+    │   │   │   ├── cleanup.yml
+    │   │   │   ├── e2e.yml
+    │   │   │   ├── install.yml
+    │   │   │   ├── main.yml
+    │   │   │   └── operator-cleanup.yml
+    │   │   └── vars
+    │   │       └── main.yml
+    │   ├── ocp-nfd-operator
+    │   │   ├── README.md
+    │   │   ├── files
+    │   │   │   └── ImageContentSourcePolicy.yml
+    │   │   ├── tasks
+    │   │   │   └── main.yml
+    │   │   └── templates
+    │   │       └── CatalogSource.yaml.j2
+    │   ├── ocp-nmstate-operator
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── tasks
+    │   │   │   └── main.yml
+    │   │   └── vars
+    │   │       └── main.yml
+    │   ├── ocp-ovnkube-cni
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── files
+    │   │   │   ├── default_policy.txt
+    │   │   │   └── egressfirewall_file.txt
+    │   │   ├── tasks
+    │   │   │   ├── egress-firewall.yml
+    │   │   │   ├── egress-ip.yml
+    │   │   │   ├── main.yml
+    │   │   │   └── networkpolicy.yml
+    │   │   └── templates
+    │   │       └── egressips_worker.yaml.j2
+    │   ├── ocp-service-binding-operator
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── tasks
+    │   │   │   └── main.yml
+    │   │   └── vars
+    │   │       └── main.yml
+    │   ├── ocp-vpa-operator
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── tasks
+    │   │   │   ├── deployment-object.yml
+    │   │   │   ├── deploymentconfig-object.yml
+    │   │   │   ├── main.yml
+    │   │   │   ├── replicaset-object.yml
+    │   │   │   ├── replicationcontroller-object.yml
+    │   │   │   ├── statefulset-object.yml
+    │   │   │   ├── vpa-e2e.yml
+    │   │   │   └── vpa.yml
+    │   │   └── vars
+    │   │       └── main.yml
+    │   ├── request-header-identity-provider
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   └── tasks
+    │   │       └── main.yml
+    │   └── set-custom-catalogsource
+    │       ├── README.md
+    │       └── tasks
+    │           └── main.yml
+    ├── plugins_and_tools
+    │   ├── golang-installation
+    │   │   ├── README.md
+    │   │   └── tasks
+    │   │       └── main.yml
+    │   ├── ocp-cli-plugins
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── files
+    │   │   │   └── oc-test-plugin.sh
+    │   │   ├── tasks
+    │   │   │   ├── custom-cli-plugin.yml
+    │   │   │   ├── install-cli-plugin-required-packages.yml
+    │   │   │   ├── krew-cli-plugin.yml
+    │   │   │   ├── main.yaml
+    │   │   │   ├── oc-compliance-cli-plugin.yml
+    │   │   │   └── oc-mirror-cli-plugin.yml
+    │   │   └── vars
+    │   │       └── main.yml
+    │   ├── ocp-fio
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yml
+    │   │   ├── files
+    │   │   │   └── run-e2e.sh
+    │   │   ├── tasks
+    │   │   │   └── main.yml
+    │   │   ├── templates
+    │   │   │   └── fio_cr.yaml.j2
+    │   │   └── vars
+    │   │       └── main.yml
+    │   ├── ocp-hostpath-deploy
+    │   │   ├── README.md
+    │   │   ├── defaults
+    │   │   │   └── main.yaml
+    │   │   ├── tasks
+    │   │   │   └── main.yaml
+    │   │   └── templates
+    │   │       ├── hostpath-pod.yaml.j2
+    │   │       ├── hostpath-pv.yaml.j2
+    │   │       └── hostpath-pvc.yaml.j2
+    │   └── ocp-sctp
+    │       ├── README.md
+    │       ├── defaults
+    │       │   └── main.yml
+    │       └── tasks
+    │           ├── main.yml
+    │           └── sctp_cleanup.yml
+    └── security_compliance
+        ├── global-secret-update
+        │   ├── README.md
+        │   └── tasks
+        │       └── main.yml
+        ├── ocp-compliance
+        │   ├── README.md
+        │   ├── defaults
+        │   │   └── main.yml
+        │   ├── files
+        │   │   └── run-e2e.sh
+        │   ├── tasks
+        │   │   ├── compliance-cleanup.yaml
+        │   │   └── main.yml
+        │   └── vars
+        │       └── main.yml
+        ├── ocp-hpa
+        │   ├── README.md
+        │   ├── defaults
+        │   │   └── main.yml
+        │   ├── tasks
+        │   │   ├── deployment-object.yml
+        │   │   ├── deploymentconfig-object.yml
+        │   │   ├── hpa.yml
+        │   │   ├── main.yml
+        │   │   ├── replicaset-object.yml
+        │   │   ├── replicationcontroller-object.yml
+        │   │   ├── statefulset-object.yml
+        │   │   └── validate-hpa.yml
+        │   └── templates
+        │       └── hpa.yml.j2
+        └── ocp-pod-disruption-budget
+            ├── README.md
+            ├── defaults
+            │   └── main.yml
+            ├── tasks
+            │   └── main.yml
+            └── templates
+                └── pdb-deployment.yml.j2
+
+155 directories, 251 files

@@ -2,5 +2,5 @@
 - name: Run scale test cases
   hosts: bastion
   roles:
-  - ocp-scale
+  - automation_cicd/ocp-scale
 

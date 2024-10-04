@@ -5,4 +5,4 @@
 - name: Enabling user defined project monitoring
   hosts: bastion
   roles: 
-  - monitoring-user-defined-projects
+  - openshift_cluster_monitoring/monitoring-user-defined-projects

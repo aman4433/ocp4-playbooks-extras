@@ -4,4 +4,4 @@
   tasks:
   - name: Deploy Compliance Operator
     include_role:
-      name: ocp-compliance
+      name: security_compliance/ocp-compliance

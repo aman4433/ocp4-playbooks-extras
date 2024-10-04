@@ -4,4 +4,4 @@
   tasks:
   - name: Deploy Network Observability Operator
     include_role:
-      name: ocp-network-observability
+      name: openshift_cluster_monitoring/ocp-network-observability

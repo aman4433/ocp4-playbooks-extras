@@ -4,9 +4,9 @@
   tasks:
   - name: Include the global-secret-update role
     include_role:
-      name: global-secret-update
+      name: security_compliance/global-secret-update
     when: sbo_catalogsource_image != "" and sbo_catalogsource_image != None and sbo_cleanup == false
 
   - name: Include the Service Binding Operator role
     include_role:
-      name: ocp-service-binding-operator
+      name: openshift_operators/ocp-service-binding-operator

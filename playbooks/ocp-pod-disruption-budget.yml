@@ -4,4 +4,4 @@
   tasks:
   - name: Enable Pod disruption Budget
     include_role:
-      name: ocp-pod-disruption-budget
+      name: security_compliance/ocp-pod-disruption-budget

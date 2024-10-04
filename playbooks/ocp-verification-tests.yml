@@ -2,5 +2,5 @@
 - name: Run verification tests
   hosts: bastion
   roles:
-  - ocp-verification-tests
+  - openshift_cluster_monitoring/ocp-verification-tests
 

@@ -4,7 +4,7 @@
   tasks:
   - name: Include the global-secret-update role
     include_role:
-        name: global-secret-update
+        name: security_compliance/global-secret-update
     when: 
       - elasticsearch_clf_cs != "" and clusterlogging_clf_cs != ""
       - elasticsearch_clf_cs != None and clusterlogging_clf_cs != None
@@ -12,7 +12,7 @@
 
   - name: Include the ClusterLogging and ClusterLogForwarding role
     include_role:
-        name: ocp-cluster-logging
+        name: openshift_cluster_monitoring/ocp-cluster-logging
     when: clf_clean_up == false
   
   - name: Clean up cluster logging 

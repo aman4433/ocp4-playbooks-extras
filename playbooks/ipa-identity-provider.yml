@@ -17,4 +17,4 @@
 
     - name: Loading the IPA provider role
       import_role:
-        name: ipa-identity-provider
+        name: openshift_operators/ipa-identity-provider

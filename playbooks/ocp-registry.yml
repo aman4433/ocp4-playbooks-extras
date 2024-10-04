@@ -2,4 +2,4 @@
 - name: Expose image registry
   hosts: bastion
   roles:
-  - ocp-image-registry
+  - custom_deployments/ocp-image-registry

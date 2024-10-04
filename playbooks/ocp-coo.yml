@@ -1,4 +1,4 @@
 - name: cluster-observability-operator deployment playbook
   hosts: bastion
   roles:
-  - ocp-coo
+  - openshift_operators/ocp-coo

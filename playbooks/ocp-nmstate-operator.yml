@@ -4,4 +4,4 @@
   tasks:
   - name: Deploy NMState Operator
     include_role:
-      name: ocp-nmstate-operator
+      name: openshift_operators/ocp-nmstate-operator

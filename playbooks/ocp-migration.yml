@@ -2,4 +2,4 @@
 - name: OCP migration and rollback of NetworkType
   hosts: bastion
   roles:
-  - ocp-migration
+  - automation_cicd/ocp-migration

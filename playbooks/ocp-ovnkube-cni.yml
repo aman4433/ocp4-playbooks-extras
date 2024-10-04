@@ -2,4 +2,4 @@
 - name: OVNKube CNI
   hosts: bastion
   roles:
-    - role: ocp-ovnkube-cni 
+    - role: openshift_operators/ocp-ovnkube-cni 

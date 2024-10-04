@@ -5,4 +5,4 @@
 - name: Cluster Resource Override Operator deployment and e2e run
   hosts: bastion
   roles:
-  - cluster-resource-override-operator
+  - openshift_operators/cluster-resource-override-operator

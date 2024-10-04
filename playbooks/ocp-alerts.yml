@@ -2,5 +2,5 @@
 - name: Run ocp alerts
   hosts: bastion
   roles:
-  - ocp-alerts
+  - openshift_cluster_monitoring/ocp-alerts
 
